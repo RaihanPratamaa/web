@@ -1,0 +1,240 @@
+/* Responsive Styles - css/responsive.css */
+
+/* Tablets and larger phones (landscape) - up to 992px */
+@media (max-width: 992px) {
+    :root {
+        --navbar-height: 60px; /* Slightly smaller navbar height */
+    }
+
+    .container {
+        padding: 0 20px; /* Slightly more padding */
+    }
+
+    /* --- Navigation --- */
+    .navbar-toggler {
+        display: block; /* Show the toggler */
+    }
+
+    .navbar-collapse {
+        /* Hide the nav links container by default on mobile */
+        /* We'll add a class via JS to show it */
+        display: none;
+        position: absolute;
+        top: var(--navbar-height); /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95); /* Dark background for mobile menu */
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .navbar-collapse.active {
+        display: block; /* Show when active */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-item {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 0.8rem 1rem;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1rem;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: var(--secondary-color); /* Highlight on hover/active */
+        color: var(--white);
+    }
+
+    .nav-link::after {
+        display: none; /* Remove underline effect on mobile */
+    }
+
+    /* --- General Adjustments --- */
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.3rem; }
+
+    .py-5 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* --- Homepage Specific Adjustments --- */
+    .hero-section {
+        height: 80vh;
+        min-height: 450px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-content .cta-button {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+
+    /* Adjust grid min size slightly if needed */
+    .destinations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+    }
+
+    /* --- Footer --- */
+    .footer-content {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Smaller mobile phones (portrait) - up to 576px */
+@media (max-width: 576px) {
+    :root {
+        --navbar-height: 55px; /* Even smaller navbar */
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* --- General Adjustments --- */
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    h1 { font-size: 2.0rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.2rem; }
+
+    .py-5 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    /* --- Navigation --- */
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+    .logo {
+        height: 35px;
+    }
+    .navbar-toggler {
+        font-size: 1.4rem;
+    }
+
+    /* --- Homepage Specific Adjustments --- */
+    .hero-section {
+        height: 70vh;
+        min-height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content .cta-button {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+        width: 80%; /* Make button wider */
+        max-width: 300px;
+    }
+
+    .intro-section p {
+        font-size: 1rem;
+    }
+
+    /* Force single column for grids */
+    .destinations-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 1.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 1.5rem;
+    }
+
+    .feature-icon i {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* --- Footer --- */
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack footer sections */
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 1rem;
+    }
+
+    .footer-section h5 {
+        margin-bottom: 0.8rem;
+    }
+
+    .social-icons {
+        margin-top: 1rem;
+        justify-content: center; /* Center icons */
+    }
+
+    .footer-section ul li a::before {
+        display: none; /* Hide chevron on small screens */
+    }
+
+    .footer-section ul li a:hover {
+        padding-left: 0; /* No padding shift on hover */
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        line-height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+} 

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Sumatera Utara - Pesona Sumatera Utara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="timeline.css"> <!-- Specific CSS for vertical timeline -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo-placeholder.png" alt="Logo Pesona Sumatera Utara" class="logo"> Pesona Sumatera Utara
+                </a>
+                <button class="navbar-toggler" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jelajahi.html">Jelajahi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kuliner.html">Kuliner</a></li>
+                        <li class="nav-item"><a class="nav-link" href="petualangan.html">Petualangan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acara.html">Acara</a></li>
+                        <li class="nav-item"><a class="nav-link" href="informasi.html">Informasi</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="sejarah.html">Sejarah</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header history-header">
+            <img src="https://awsimages.detik.net.id/community/media/visual/2020/10/18/serba-serbi-kain-ulos-5.jpeg?w=1200" alt="Jejak Sejarah Sumatera Utara">
+            <div class="header-caption">
+                <h1>Jejak Sejarah Sumatera Utara</h1>
+                <p>Menelusuri masa lalu dari kerajaan kuno hingga era modern</p>
+            </div>
+        </section>
+
+        <!-- Historical Timeline -->
+        <section class="historical-timeline container py-5">
+            <h2 class="text-center section-title">Linimasa Sejarah</h2>
+            <ul class="timeline">
+                <!-- Item 1 -->
+                <li>
+                    <div class="timeline-badge primary"><i class="fas fa-landmark"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Masa Kerajaan Kuno (Abad ke-7 M)</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Munculnya kerajaan-kerajaan awal di pesisir timur Sumatera, termasuk kemungkinan pengaruh Sriwijaya. Bukti arkeologis ditemukan di situs seperti Kota Cina di Medan Utara.</p>
+                            <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/10/2024/01/08/Suku-Karo-Sumatera-Utara-3669645048.jpg" alt="Era Prasejarah">
+                        </div>
+                    </div>
+                </li>
+                <!-- Item 2 -->
+                 <li class="timeline-inverted">
+                    <div class="timeline-badge success"><i class="fas fa-ship"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Penyebaran Islam & Kesultanan (Abad ke-13 - 16 M)</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Islam mulai menyebar di wilayah pesisir melalui jalur perdagangan. Berdirinya kesultanan-kesultanan Melayu seperti Kesultanan Deli, Serdang, dan Asahan.</p>
+                            <img src="https://torch.id/cdn/shop/articles/Artikel_170_-_Preview.jpg?v=1713641039" alt="Kesultanan Islam">
+                        </div>
+                    </div>
+                </li>
+                <!-- Item 3 -->
+                <li>
+                     <div class="timeline-badge info"><i class="fas fa-map"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Masa Kolonial Belanda (Abad ke-17 - 20 M)</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>VOC dan kemudian pemerintah Hindia Belanda secara bertahap menguasai wilayah Sumatera Utara. Eksploitasi sumber daya alam (terutama perkebunan tembakau Deli) dan pembangunan infrastruktur seperti jalan dan rel kereta api. Perlawanan lokal terjadi, termasuk Perang Batak.</p>
+                            <img src="https://images.unsplash.com/photo-1601058497548-f247dfe349d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Masa Kolonial">
+                        </div>
+                    </div>
+                </li>
+                <!-- Item 4 -->
+                 <li class="timeline-inverted">
+                     <div class="timeline-badge warning"><i class="fas fa-flag"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Pergerakan Nasional & Kemerdekaan (Awal Abad ke-20 - 1945)</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Munculnya organisasi pergerakan nasional di Sumatera Utara. Pendudukan Jepang selama Perang Dunia II. Proklamasi Kemerdekaan Indonesia pada 17 Agustus 1945 dan perjuangan mempertahankan kemerdekaan.</p>
+                            <img src="https://bolumenara.co.id/uploads/8/2023-11/c738f3334a9d2ed99a2a4372571bad0d.jpg" alt="Kemerdekaan Indonesia">
+                        </div>
+                    </div>
+                </li>
+                 <!-- Item 5 -->
+                 <li>
+                     <div class="timeline-badge danger"><i class="fas fa-building"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Era Pasca Kemerdekaan (1945 - Sekarang)</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Pembentukan Provinsi Sumatera Utara. Pembangunan ekonomi, sosial, dan politik. Medan berkembang menjadi kota metropolitan terbesar ketiga di Indonesia. Pengembangan sektor pariwisata menjadi salah satu fokus utama.</p>
+                            <img src="https://images2.alphacoders.com/594/594015.jpg" alt="Medan Modern">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Historical Figures -->
+        <section class="historical-figures bg-light py-5">
+            <div class="container">
+                <h2 class="text-center section-title">Tokoh-Tokoh Sejarah</h2>
+                <div class="figure-grid">
+                    <div class="figure-card">
+                        <img src="https://media.tampang.com/tm_images/article/202407/suky-8jpgmlm2ubfgn7erp0jtl9c.jpg" alt="Sisingamangaraja XII" class="figure-img rounded-circle">
+                        <h4>Sisingamangaraja XII</h4>
+                        <p>Raja Batak terakhir yang memimpin Perang Batak melawan kolonial Belanda (akhir abad ke-19).</p>
+                    </div>
+                    <div class="figure-card">
+                        <img src="https://images.unsplash.com/photo-1705830707830-7ce2806baae9?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cut Nyak Dhien (Pengasingan)" class="figure-img rounded-circle">
+                        <h4>Cut Nyak Dhien</h4>
+                        <p>Pahlawan nasional dari Aceh yang perjuangannya melawan Belanda juga berdampak pada wilayah perbatasan Sumatera Utara.</p>
+                    </div>
+                    <div class="figure-card">
+                        <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2021/04/09/95290466-9a6e-42f8-9186-31dd8b2949df-1617964802521-0ace7592d464055307ca59f6270e3ab0.jpg" alt="Tengku Amir Hamzah" class="figure-img rounded-circle">
+                        <h4>Tengku Amir Hamzah</h4>
+                        <p>Tokoh pergerakan kemerdekaan, jurnalis, diplomat, dan Wakil Presiden Indonesia ke-3, berasal dari Pematangsiantar.</p>
+                    </div>
+                    <div class="figure-card">
+                        <img src="https://cdn.idntimes.com/content-images/community/2021/09/43985590-771666773177315-5989236950916611446-n-3f470419c48481a410869607195370a0-762ece112ca48f70068dd7aadb74cf89.jpg" alt="Yap Thiam Hien" class="figure-img rounded-circle">
+                         <h4>Yap Thiam Hien</h4>
+                        <p>Pengacara dan pejuang hak asasi manusia terkemuka yang aktif di Medan pasca kemerdekaan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Sites Map (Placeholder) -->
+        <section class="historical-sites-map container py-5">
+            <h2 class="text-center section-title">Peta Situs Sejarah</h2>
+            <div class="map-placeholder" id="history-map">
+                <img src="https://images.tokopedia.net/blog-tokopedia.com/uploads/2021/11/wisata-Berastagi.jpg" alt="Peta Situs Sejarah" style="width:100%; max-width:800px; display:block; margin:auto; opacity: 0.6; border-radius: 8px;">
+                <p class="text-center mt-2">Peta interaktif akan menunjukkan lokasi situs bersejarah penting.</p>
+                <!-- Leaflet Map integration here -->
+            </div>
+        </section>
+
+        <!-- Related Articles/Further Reading -->
+        <section class="further-reading bg-light py-5">
+            <div class="container">
+                <h2 class="text-center section-title">Bacaan Lebih Lanjut</h2>
+                <div class="reading-list">
+                    <div class="reading-item">
+                        <i class="fas fa-book fa-2x"></i>
+                        <div>
+                            <h5>Sejarah Medan Tempo Doeloe</h5>
+                            <p>Menjelajahi perkembangan kota Medan dari masa ke masa.</p>
+                            <a href="#" class="read-more">Baca Artikel <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="reading-item">
+                         <i class="fas fa-landmark fa-2x"></i>
+                        <div>
+                            <h5>Perang Batak: Perlawanan Sisingamangaraja XII</h5>
+                            <p>Detail perjuangan rakyat Batak melawan kolonialisme.</p>
+                            <a href="#" class="read-more">Baca Artikel <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                     <div class="reading-item">
+                         <i class="fas fa-scroll fa-2x"></i>
+                        <div>
+                            <h5>Kesultanan Deli dan Warisan Budayanya</h5>
+                            <p>Mengenal lebih dekat sejarah dan pengaruh Kesultanan Deli.</p>
+                            <a href="#" class="read-more">Baca Artikel <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+         <div class="container footer-content">
+             <div class="footer-section about">
+                 <img src="images/logo-placeholder-white.png" alt="Logo Pesona Sumatera Utara Putih" class="footer-logo">
+                 <p>Pesona Sumatera Utara adalah panduan resmi Anda untuk menjelajahi keajaiban provinsi Sumatera Utara.</p>
+                 <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                 </div>
+            </div>
+            <div class="footer-section links">
+                <h5>Tautan Cepat</h5>
+                <ul>
+                    <li><a href="jelajahi.html">Jelajahi</a></li>
+                    <li><a href="budaya.html">Budaya</a></li>
+                    <li><a href="kuliner.html">Kuliner</a></li>
+                    <li><a href="acara.html">Acara</a></li>
+                    <li><a href="informasi.html">Informasi Praktis</a></li>
+                </ul>
+            </div>
+             <div class="footer-section contact">
+                 <h5>Kontak Kami</h5>
+                 <p><i class="fas fa-map-marker-alt"></i> Dinas Kebudayaan & Pariwisata Prov. Sumatera Utara</p>
+                 <p>Jl. Jenderal Sudirman No. 123, Medan</p>
+                 <p><i class="fas fa-phone"></i> +62 61 1234567</p>
+                 <p><i class="fas fa-envelope"></i> info@pesonasumut.go.id</p>
+             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Hak Cipta &copy; 2024 Pesona Sumatera Utara. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Kembali ke atas"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="map-history.js"></script>
+</body>
+</html> 

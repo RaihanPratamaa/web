@@ -1,0 +1,236 @@
+/* Petualangan Page Specific Styles - css/petualangan.css */
+
+/* --- General Section Styling --- */
+.activity-cards .section-title,
+.elevation-profile .section-title,
+.adventure-categories .section-title,
+.equipment-checklist .section-title,
+.season-recommendation .section-title,
+.adventure-gallery .section-title {
+    margin-bottom: 2.5rem;
+}
+
+/* --- Adventure Header specific (Optional) --- */
+.adventure-header {
+    /* Add specific styles if needed, e.g. different overlay */
+}
+
+/* --- Activity Cards --- */
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.adventure-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adventure-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.adventure-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.adventure-card .card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.adventure-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.adventure-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.difficulty-rating {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.difficulty-rating i {
+    color: var(--secondary-color);
+    margin-left: 2px;
+}
+
+.adventure-card .btn {
+    margin-top: auto; /* Push button to bottom */
+    align-self: flex-start;
+}
+
+/* --- Elevation Profile Placeholder --- */
+.elevation-profile .profile-placeholder {
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-placeholder img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.7;
+}
+
+/* --- Adventure Categories Tabs --- */
+/* Reuses tab styles from jelajahi.css, but we can add specifics if needed */
+.adventure-categories .tabs .tab-content {
+    /* Example: Add more padding if needed */
+    /* padding-top: 2rem; */
+}
+
+.adventure-categories .category-img {
+    max-width: 600px;
+    height: auto;
+    margin: 1rem auto 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* --- Equipment Checklist Accordion --- */
+/* Reuses accordion styles from budaya.css */
+.checklist-accordion .accordion-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist-accordion .accordion-content li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.checklist-accordion .accordion-content li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    width: 15px;
+    text-align: center;
+}
+
+/* --- Season Recommendation Table --- */
+.season-chart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Ensures border-radius applies to table */
+}
+
+.season-chart th, .season-chart td {
+    border: 1px solid #ddd;
+    padding: 0.8rem 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.season-chart th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.season-chart tbody tr:nth-child(even) {
+    background-color: var(--bg-light);
+}
+
+.season-chart td.best {
+    background-color: #d4edda; /* Light green */
+    color: #155724;
+    font-weight: 600;
+}
+
+.season-chart td.possible {
+    background-color: #fff3cd; /* Light yellow */
+    color: #856404;
+}
+
+/* --- Adventure Gallery --- */
+/* Reusing gallery-grid from gallery.css/budaya.css/kuliner.css is likely fine */
+.adventure-gallery-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.adventure-gallery-page a {
+     display: block;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adventure-gallery-page a:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.adventure-gallery-page img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .adventure-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .season-chart th, .season-chart td {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .adventure-grid {
+        grid-template-columns: 1fr;
+    }
+    .adventure-card img {
+        height: 200px;
+    }
+    .season-chart {
+        font-size: 0.8rem; /* Reduce base font for small table */
+        overflow-x: auto; /* Allow horizontal scroll for table */
+    }
+    .season-chart th, .season-chart td {
+        padding: 0.5rem;
+        white-space: nowrap; /* Prevent wrapping in cells */
+    }
+    .adventure-gallery-page {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .adventure-gallery-page img {
+        height: 150px;
+    }
+} 

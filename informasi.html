@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Praktis - Pesona Sumatera Utara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <!-- Include Leaflet CSS for map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="informasi.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo-placeholder.png" alt="Logo Pesona Sumatera Utara" class="logo"> Pesona Sumatera Utara
+                </a>
+                <button class="navbar-toggler" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jelajahi.html">Jelajahi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kuliner.html">Kuliner</a></li>
+                        <li class="nav-item"><a class="nav-link" href="petualangan.html">Petualangan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acara.html">Acara</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="informasi.html">Informasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header info-header">
+            <img src="https://images.unsplash.com/photo-1601058497548-f247dfe349d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Informasi Praktis Sumatera Utara">
+            <div class="header-caption">
+                <h1>Informasi Praktis untuk Wisatawan</h1>
+                <p>Rencanakan perjalanan Anda ke Sumatera Utara dengan mudah</p>
+            </div>
+        </section>
+
+        <!-- Key Information Tabs -->
+        <section class="info-tabs container py-5">
+             <div class="tabs">
+                <div class="tab-buttons info-tab-buttons">
+                    <button class="tab-button active" data-tab="transportasi"><i class="fas fa-plane-departure"></i> Transportasi</button>
+                    <button class="tab-button" data-tab="akomodasi"><i class="fas fa-hotel"></i> Akomodasi</button>
+                    <button class="tab-button" data-tab="cuaca"><i class="fas fa-cloud-sun"></i> Cuaca & Waktu Terbaik</button>
+                    <button class="tab-button" data-tab="tips"><i class="fas fa-lightbulb"></i> Tips Wisata</button>
+                    <button class="tab-button" data-tab="penting"><i class="fas fa-exclamation-circle"></i> Info Penting</button>
+                </div>
+
+                <div class="tab-content active" id="transportasi">
+                    <h3><i class="fas fa-plane-departure"></i> Transportasi</h3>
+                    <div class="transport-option">
+                        <i class="fas fa-plane fa-3x"></i>
+                        <h4>Pesawat</h4>
+                        <img src="https://torch.id/cdn/shop/articles/Artikel_170_-_Preview.jpg?v=1713641039" alt="Bandara Kualanamu" class="transport-img">
+                        <p>Bandara Internasional Kualanamu (KNO) di Deli Serdang adalah gerbang utama. Bandara Silangit (DTB) melayani area Danau Toba.</p>
+                    </div>
+                    <div class="transport-option">
+                        <i class="fas fa-bus fa-3x"></i>
+                        <h4>Bus Antar Kota</h4>
+                        <img src="https://media.tampang.com/tm_images/article/202407/suky-8jpgmlm2ubfgn7erp0jtl9c.jpg" alt="Bus Antar Kota" class="transport-img">
+                        <p>Jaringan bus luas menghubungkan kota-kota besar di Sumatera Utara dan pulau Sumatera.</p>
+                    </div>
+                    <div class="transport-option">
+                        <i class="fas fa-taxi fa-3x"></i>
+                        <h4>Transportasi Lokal</h4>
+                        <img src="https://images.unsplash.com/photo-1705830707830-7ce2806baae9?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Transportasi Lokal" class="transport-img">
+                        <p>Taksi, ojek online, becak motor (bentor), dan angkutan kota (angkot) tersedia di kota-kota besar.</p>
+                    </div>
+                     <div class="info-map" id="transport-map"></div>
+                </div>
+
+                <div class="tab-content" id="akomodasi">
+                    <h3><i class="fas fa-hotel"></i> Akomodasi</h3>
+                    <div class="accommodation-type">
+                        <i class="fas fa-hotel fa-3x"></i>
+                        <h4>Hotel & Resort</h4>
+                        <img src="https://cdn.idntimes.com/content-images/community/2021/09/43985590-771666773177315-5989236950916611446-n-3f470419c48481a410869607195370a0-762ece112ca48f70068dd7aadb74cf89.jpg" alt="Hotel Mewah" class="acco-img">
+                        <p>Berbagai pilihan dari hotel budget hingga resort mewah tersedia, terutama di Medan, Berastagi, dan sekitar Danau Toba.</p>
+                    </div>
+                    <div class="accommodation-type">
+                        <i class="fas fa-home fa-3x"></i>
+                        <h4>Guesthouse & Homestay</h4>
+                        <img src="https://awsimages.detik.net.id/community/media/visual/2022/11/06/rumah-bolon-di-huta-siallagan_169.jpeg?w=1200" alt="Guesthouse Nyaman" class="acco-img">
+                        <p>Pilihan populer untuk pengalaman lebih lokal dan budget terjangkau, banyak ditemukan di area wisata.</p>
+                    </div>
+                    <div class="accommodation-type">
+                        <i class="fas fa-campground fa-3x"></i>
+                        <h4>Villa & Akomodasi Unik</h4>
+                        <img src="https://bolumenara.co.id/uploads/8/2023-11/c738f3334a9d2ed99a2a4372571bad0d.jpg" alt="Villa Tepi Danau" class="acco-img">
+                         <p>Sewa villa pribadi atau coba pengalaman menginap unik seperti rumah pohon atau glamping di beberapa lokasi.</p>
+                    </div>
+                    <p><strong>Tips:</strong> Pesan akomodasi lebih awal, terutama saat musim liburan atau festival besar seperti Festival Danau Toba.</p>
+                    <img src="images/info-accommodation.jpg" alt="Akomodasi di Sumatera Utara" class="info-img">
+                </div>
+
+                <div class="tab-content" id="cuaca">
+                    <h3><i class="fas fa-cloud-sun"></i> Cuaca & Waktu Terbaik Berkunjung</h3>
+                    <p>Sumatera Utara memiliki iklim tropis dengan dua musim utama:</p>
+                    <ul>
+                        <li><strong>Musim Kemarau:</strong> Biasanya berlangsung dari <strong>Mei hingga September</strong>. Ini adalah waktu terbaik untuk sebagian besar aktivitas luar ruangan seperti trekking, pendakian, dan menikmati pantai, karena cuaca cenderung cerah dan kering.</li>
+                        <li><strong>Musim Hujan:</strong> Biasanya berlangsung dari <strong>Oktober hingga April</strong>. Curah hujan lebih tinggi, terkadang disertai badai. Namun, ini adalah waktu terbaik untuk arung jeram karena debit air sungai meningkat. Vegetasi juga lebih hijau dan subur.</li>
+                    </ul>
+                    <p><strong>Suhu:</strong> Dataran rendah seperti Medan cenderung panas dan lembab sepanjang tahun (25-33°C). Dataran tinggi seperti Berastagi dan sekitar Danau Toba lebih sejuk (15-25°C), terutama di malam hari.</p>
+                    <p><strong>Waktu Terbaik Secara Umum:</strong> <strong>Juni hingga Agustus</strong> sering dianggap sebagai puncak musim wisata karena cuaca yang baik dan bertepatan dengan liburan sekolah.</p>
+                     <div class="weather-widget-placeholder">
+                        <h4>Prakiraan Cuaca Medan (Contoh)</h4>
+                        <div class="widget-content">
+                            <i class="fas fa-cloud-sun-rain fa-3x"></i>
+                            <span><strong>Hari Ini:</strong> Berawan, 29°C</span>
+                            <span><strong>Besok:</strong> Hujan Ringan, 28°C</span>
+                        </div>
+                        <p>(Placeholder widget cuaca)</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tips">
+                    <h3><i class="fas fa-lightbulb"></i> Tips Wisata</h3>
+                    <ul>
+                        <li><strong>Bahasa:</strong> Bahasa Indonesia adalah bahasa nasional. Bahasa daerah seperti Batak (berbagai dialek), Melayu, dan Karo juga umum digunakan. Bahasa Inggris cukup dipahami di area turis utama. Pelajari beberapa frasa dasar Bahasa Indonesia ("Terima kasih", "Selamat pagi", "Berapa harganya?") akan sangat membantu.</li>
+                        <li><strong>Mata Uang:</strong> Rupiah Indonesia (IDR). ATM banyak tersedia di kota besar dan area wisata. Kartu kredit diterima di hotel besar dan beberapa restoran/toko, namun selalu siapkan uang tunai untuk transaksi kecil dan di daerah pedesaan.</li>
+                        <li><strong>Kesehatan:</strong> Bawa obat-obatan pribadi dan P3K dasar. Minum air kemasan. Gunakan lotion anti nyamuk, terutama di daerah hutan dan pedesaan. Pertimbangkan vaksinasi yang direkomendasikan sebelum bepergian.</li>
+                        <li><strong>Keamanan:</strong> Secara umum aman, namun tetap waspada terhadap barang bawaan Anda, terutama di tempat ramai. Hindari berjalan sendirian di malam hari di area sepi.</li>
+                        <li><strong>Etiket Lokal:</strong> Berpakaian sopan, terutama saat mengunjungi tempat ibadah atau desa adat. Gunakan tangan kanan saat memberi atau menerima sesuatu. Tawar-menawar harga umum dilakukan di pasar tradisional, lakukan dengan sopan.</li>
+                        <li><strong>Listrik:</strong> Tegangan standar 220V dengan colokan tipe C/F (dua pin bulat). Bawa adaptor universal jika perlu.</li>
+                        <li><strong>SIM Card & Internet:</strong> SIM card lokal mudah didapatkan di bandara atau toko ponsel. Jaringan internet cukup baik di kota besar, namun bisa terbatas di daerah terpencil.</li>
+                    </ul>
+                    <img src="images/info-tips.jpg" alt="Wisatawan di Sumatera Utara" class="info-img">
+                </div>
+
+                <div class="tab-content" id="penting">
+                    <h3><i class="fas fa-exclamation-circle"></i> Informasi Penting & Kontak Darurat</h3>
+                    <p><strong>Visa & Imigrasi:</strong> Warga negara dari sebagian besar negara dapat masuk Indonesia tanpa visa untuk tujuan wisata hingga 30 hari (Visa on Arrival atau bebas visa kunjungan singkat). Pastikan paspor Anda valid minimal 6 bulan. Periksa persyaratan visa terbaru sebelum berangkat.</p>
+                    <p><strong>Bea Cukai:</strong> Patuhi peraturan bea cukai Indonesia mengenai barang bawaan (alkohol, rokok, barang terlarang).</p>
+                    <p><strong>Nomor Telepon Penting:</strong>
+                        <ul>
+                            <li>Polisi: <strong>110</strong></li>
+                            <li>Ambulans: <strong>118 / 119</strong></li>
+                            <li>Pemadam Kebakaran: <strong>113</strong></li>
+                            <li>SAR (Basarnas): <strong>115</strong></li>
+                            <li>Informasi Turis (Contoh): +62 61 XXX XXX (Nomor Dinas Pariwisata setempat)</li>
+                        </ul>
+                    </p>
+                    <p><strong>Konsulat/Kedutaan:</strong> Beberapa negara memiliki konsulat di Medan. Cari informasi kontak konsulat/kedutaan negara Anda jika diperlukan.</p>
+                    <p><strong>Asuransi Perjalanan:</strong> Sangat direkomendasikan untuk memiliki asuransi perjalanan yang mencakup kesehatan, kecelakaan, dan kehilangan barang.</p>
+                    <div class="emergency-contacts">
+                        <div class="contact-item"><i class="fas fa-phone-alt"></i> 110 (Polisi)</div>
+                        <div class="contact-item"><i class="fas fa-ambulance"></i> 118/119 (Ambulans)</div>
+                         <div class="contact-item"><i class="fas fa-fire-extinguisher"></i> 113 (Damkar)</div>
+                         <div class="contact-item"><i class="fas fa-life-ring"></i> 115 (SAR)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloadable Resources -->
+        <section class="downloadable-resources bg-light py-5">
+            <div class="container text-center">
+                <h2 class="section-title">Sumber Daya Unduhan</h2>
+                <p>Unduh peta, brosur, dan panduan untuk membantu perencanaan Anda.</p>
+                <div class="resource-links">
+                    <a href="downloads/peta-wisata-sumut.pdf" class="btn btn-outline-primary" download><i class="fas fa-map-marked-alt"></i> Peta Wisata (PDF)</a>
+                    <a href="downloads/brosur-pesona-sumut.pdf" class="btn btn-outline-primary" download><i class="fas fa-book-open"></i> Brosur Wisata (PDF)</a>
+                    <a href="downloads/panduan-transportasi.pdf" class="btn btn-outline-primary" download><i class="fas fa-bus"></i> Panduan Transportasi (PDF)</a>
+                    <!-- Add more download links -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequently Asked Questions (FAQ) -->
+        <section class="faq-section container py-5">
+            <h2 class="text-center section-title">Pertanyaan Umum (FAQ)</h2>
+            <div class="accordion faq-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Apakah aman bepergian ke Sumatera Utara?</button>
+                    <div class="accordion-content">
+                        <p>Ya, Sumatera Utara secara umum aman untuk wisatawan. Namun, seperti di tempat lain, penting untuk selalu waspada terhadap lingkungan sekitar dan menjaga barang berharga Anda. Di daerah wisata populer, ikuti saran dari pemandu lokal atau staf akomodasi Anda.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Kapan waktu terbaik mengunjungi Danau Toba?</button>
+                    <div class="accordion-content">
+                        <p>Waktu terbaik adalah selama musim kemarau (Mei-September) untuk cuaca yang cerah. Namun, Danau Toba indah sepanjang tahun. Jika Anda ingin menyaksikan Festival Danau Toba, biasanya diadakan sekitar bulan Juni-Agustus (cek jadwal pasti).</p>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header">Bagaimana cara terbaik menuju Pulau Samosir?</button>
+                    <div class="accordion-content">
+                        <p>Cara paling umum adalah dengan naik feri atau kapal penumpang dari Pelabuhan Tigaraja di Parapat ke Pelabuhan Tomok atau Tuktuk di Pulau Samosir. Perjalanan memakan waktu sekitar 30-60 menit.</p>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header">Apakah saya perlu pemandu untuk trekking di Bukit Lawang?</button>
+                    <div class="accordion-content">
+                        <p>Sangat direkomendasikan dan seringkali diwajibkan untuk menggunakan pemandu berlisensi saat trekking di Taman Nasional Gunung Leuser (Bukit Lawang) demi keselamatan Anda dan kelestarian lingkungan, serta untuk meningkatkan peluang melihat Orangutan.</p>
+                    </div>
+                </div>
+                <!-- Add more FAQ items -->
+            </div>
+        </section>
+
+        <section class="safety-health bg-light">
+            <div class="container">
+                <h2 class="text-center section-title">Keamanan & Kesehatan</h2>
+                <div class="safety-grid">
+                    <div class="safety-item">
+                        <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/10/2024/01/08/Suku-Karo-Sumatera-Utara-3669645048.jpg" alt="Keamanan Umum">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="safety-item">
+                         <img src="https://images2.alphacoders.com/594/594015.jpg" alt="Fasilitas Kesehatan">
+                         <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                    <div class="safety-item">
+                         <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2021/04/09/95290466-9a6e-42f8-9186-31dd8b2949df-1617964802521-0ace7592d464055307ca59f6270e3ab0.jpg" alt="Vaksinasi & Pencegahan">
+                         <i class="fas fa-syringe"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2 class="text-center section-title">Peta Interaktif Sumatera Utara</h2>
+            <div id="map-placeholder" style="height: 500px; border-radius: 15px; margin: 20px auto; max-width: 1200px;"></div>
+            <div class="container">
+                <div class="map-info text-center mt-3">
+                    <p><i class="fas fa-info-circle"></i> Gunakan peta interaktif untuk melihat lokasi-lokasi penting di Sumatera Utara</p>
+                    <p>Klik marker untuk informasi detail</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+         <div class="container footer-content">
+             <div class="footer-section about">
+                 <img src="images/logo-placeholder-white.png" alt="Logo Pesona Sumatera Utara Putih" class="footer-logo">
+                 <p>Pesona Sumatera Utara adalah panduan resmi Anda untuk menjelajahi keajaiban provinsi Sumatera Utara.</p>
+                 <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                 </div>
+            </div>
+            <div class="footer-section links">
+                <h5>Tautan Cepat</h5>
+                <ul>
+                    <li><a href="jelajahi.html">Jelajahi</a></li>
+                    <li><a href="budaya.html">Budaya</a></li>
+                    <li><a href="kuliner.html">Kuliner</a></li>
+                    <li><a href="acara.html">Acara</a></li>
+                    <li><a href="informasi.html">Informasi Praktis</a></li>
+                </ul>
+            </div>
+             <div class="footer-section contact">
+                 <h5>Kontak Kami</h5>
+                 <p><i class="fas fa-map-marker-alt"></i> Dinas Kebudayaan & Pariwisata Prov. Sumatera Utara</p>
+                 <p>Jl. Jenderal Sudirman No. 123, Medan</p>
+                 <p><i class="fas fa-phone"></i> +62 61 1234567</p>
+                 <p><i class="fas fa-envelope"></i> info@pesonasumut.go.id</p>
+             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Hak Cipta &copy; 2024 Pesona Sumatera Utara. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Kembali ke atas"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+    <script src="tabs.js"></script>
+    <script src="accordion.js"></script>
+    <!-- Include Leaflet JS for map -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="map-info.js"></script>
+</body>
+</html> 

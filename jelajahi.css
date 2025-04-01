@@ -1,0 +1,430 @@
+/* Jelajahi Page Specific Styles - css/jelajahi.css */
+
+.destination-list-section {
+    padding: 3rem 0;
+}
+
+.destination-item {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Style odd/even items differently for visual rhythm (optional) */
+.destination-item:nth-child(even) {
+    flex-direction: row-reverse; /* Reverse layout for even items */
+}
+
+.destination-image {
+    flex: 0 0 40%; /* Image takes 40% width */
+    min-height: 250px; /* Minimum height for image area */
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.destination-item:hover .destination-image img {
+    transform: scale(1.05);
+}
+
+.destination-content {
+    flex: 1 1 60%; /* Content takes remaining 60% */
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destination-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.destination-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.destination-content .btn {
+    align-self: center; /* Center button */
+}
+
+/* Responsive adjustments for destination items */
+@media (max-width: 768px) {
+    .destination-item,
+    .destination-item:nth-child(even) {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .destination-image {
+        flex-basis: auto; /* Allow image height to be auto */
+        height: 250px; /* Set a fixed height for consistency */
+        width: 100%;
+    }
+
+    .destination-content {
+        flex-basis: auto;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .destination-content h3 {
+        font-size: 1.6rem;
+    }
+
+     .destination-content p {
+        font-size: 0.95rem;
+    }
+
+    .destination-content .btn {
+        align-self: center; /* Center button */
+    }
+}
+
+/* Region Selector */
+.region-selector {
+    padding: 1.5rem 0 0 0; /* Padding top, less bottom */
+    border-bottom: 1px solid #eee;
+}
+
+.region-selector h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.region-buttons button {
+    margin: 0 5px 10px 5px;
+    background-color: #e0e0e0;
+    color: var(--text-color);
+    border: none;
+    font-weight: 600;
+}
+
+.region-buttons button:hover {
+    background-color: #ccc;
+    color: var(--text-color);
+}
+
+.region-buttons button.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Destination Grid (Explore Page Version) */
+.destinations-section {
+     padding: 3rem 0;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.explore-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.explore-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.explore-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.explore-card:hover img {
+     transform: scale(1.05);
+}
+
+.explore-card .card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.explore-card .card-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.explore-card .card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-top: auto; /* Push to bottom */
+    align-self: flex-start;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: darken(var(--secondary-color), 10%);
+    text-decoration: underline;
+}
+
+.read-more i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover i {
+    transform: translateX(4px);
+}
+
+/* Filtering styles (initially hide all, JS will show relevant) */
+.explore-card.hidden {
+    display: none;
+}
+
+/* Tabbed Content Section */
+.region-tabs {
+    padding: 3rem 0;
+    background-color: var(--bg-light);
+}
+
+.tabs .tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 0.8rem 2rem;
+    margin: 0 5px 10px 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #e0e0e0;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #ccc;
+}
+
+.tab-button.active {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.tab-content {
+    display: none; /* Hide inactive tabs */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block; /* Show active tab */
+}
+
+.tab-content h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tab-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+    color: #555;
+}
+
+.region-img {
+    max-width: 600px;
+    height: auto;
+    margin: 1rem auto 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Visit Timeline Section */
+.visit-timeline {
+    padding: 4rem 0;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 2rem auto 0 auto;
+    padding: 1rem 0;
+}
+
+/* The vertical line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-bottom: 3rem; /* Spacing between items */
+}
+
+/* Circle on the timeline */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--white);
+    border: 4px solid var(--secondary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place items to the left */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+/* Place items to the right */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* Adjust circle position for right-side items */
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+/* Content box */
+.timeline-content {
+    padding: 15px 20px;
+    background-color: var(--white);
+    position: relative;
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--primary-color);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+     border-left: none;
+     border-right: 4px solid var(--primary-color);
+}
+
+.timeline-content h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+}
+
+.timeline-img {
+    width: 100%;
+    height: 150px; /* Fixed height for timeline images */
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.timeline-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Timeline responsiveness */
+@media (max-width: 768px) {
+    .timeline-container::after {
+        left: 20px; /* Move line to the left */
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px; /* Space for line and circle */
+        padding-right: 10px;
+        margin-bottom: 2rem;
+    }
+
+    /* All items on the right side of the line */
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0%;
+    }
+
+    /* Place circle on the left */
+    .timeline-item::after {
+        left: 10px;
+    }
+    .timeline-item:nth-child(even)::after {
+        left: 10px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+         border-right: none;
+         border-left: 4px solid var(--primary-color);
+    }
+}
+
+/* Fade-in animation for tabs */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+} 

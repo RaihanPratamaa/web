@@ -1,0 +1,491 @@
+/* Budaya Page Specific Styles - css/budaya.css */
+
+/* --- General Section Styling --- */
+.ethnic-groups .section-title,
+.traditional-architecture .section-title,
+.cultural-performances .section-title,
+.traditional-crafts .section-title,
+.cultural-calendar .section-title,
+.traditional-music .section-title {
+    margin-bottom: 2.5rem;
+}
+
+/* --- Ethnic Groups & Cultural Calendar Accordion --- */
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.accordion-item {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: var(--bg-light);
+    border: none;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    color: var(--text-color);
+}
+
+.accordion-header:hover {
+    background-color: #e9e9e9;
+}
+
+.accordion-header::after {
+    content: '\f078'; /* FontAwesome down arrow */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-content {
+    padding: 1.5rem;
+    background-color: var(--white);
+    display: none; /* Hidden by default */
+    border-top: 1px solid #eee;
+}
+
+.accordion-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.ethnic-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Traditional Architecture Gallery --- */
+.architecture-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.architecture-gallery a {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.architecture-gallery a:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.architecture-gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Cultural Performances --- */
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.performance-item {
+    text-align: center;
+}
+
+.performance-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    background-color: #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.video-placeholder img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.video-placeholder:hover .video-play-icon {
+    color: var(--white);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.performance-item p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- Traditional Crafts --- */
+.crafts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.craft-item {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.craft-item:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.craft-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+.craft-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.craft-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- Traditional Music Placeholder --- */
+.music-player-placeholder {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.player-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.player-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.player-item p strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+}
+
+.audio-controls i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.audio-controls i:hover {
+    color: darken(var(--secondary-color), 10%);
+}
+
+.audio-controls .time {
+    font-size: 0.9rem;
+    color: #777;
+    margin-right: 1rem;
+    min-width: 80px; /* Prevent layout shift */
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.progress {
+    height: 100%;
+    width: 30%; /* Example progress */
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+/* Responsive adjustments for Budaya page */
+@media (max-width: 768px) {
+    .architecture-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .architecture-gallery img {
+        height: 120px;
+    }
+    .crafts-grid, .performance-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+}
+
+@media (max-width: 576px) {
+    .architecture-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+     .architecture-gallery img {
+        height: 100px;
+    }
+    .crafts-grid, .performance-grid {
+        grid-template-columns: 1fr;
+    }
+     .accordion-header {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    .accordion-header::after {
+        right: 1rem;
+    }
+    .accordion-content {
+        padding: 1rem;
+    }
+    .craft-item img {
+        height: 160px;
+    }
+}
+
+/* Common Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.image-wrapper {
+    position: relative;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .image-wrapper img {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+    color: #333;
+    background: #fff;
+}
+
+/* Architecture Gallery Specific */
+.architecture-gallery {
+    margin-bottom: 30px;
+}
+
+/* Ethnic Groups Gallery */
+.ethnic-card {
+    margin: 20px 0;
+}
+
+.ethnic-img {
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.ethnic-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Cultural Performances */
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.performance-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.performance-video {
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+}
+
+.performance-video img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.performance-item h4 {
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+}
+
+.performance-item p {
+    padding: 0 15px 15px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Traditional Crafts */
+.crafts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.craft-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.craft-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.craft-item img {
+    width: 100%;
+    height: 0;
+    padding-top: 75%;
+    position: relative;
+    object-fit: cover;
+}
+
+.craft-item h3 {
+    padding: 15px 15px 5px;
+    margin: 0;
+    text-align: center;
+}
+
+.craft-item p {
+    padding: 0 15px 15px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .gallery-grid,
+    .performance-grid,
+    .crafts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 15px;
+    }
+} 

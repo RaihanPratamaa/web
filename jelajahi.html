@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Destinasi wisata Sumatera Utara, Danau Toba, Samosir, Berastagi, Bukit Lawang, Medan, Nias">
+    <title>Jelajahi Destinasi - Pesona Sumatera Utara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="jelajahi.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo-placeholder.png" alt="Logo Pesona Sumatera Utara" class="logo"> Pesona Sumatera Utara
+                </a>
+                <button class="navbar-toggler" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="jelajahi.html">Jelajahi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kuliner.html">Kuliner</a></li>
+                        <li class="nav-item"><a class="nav-link" href="petualangan.html">Petualangan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acara.html">Acara</a></li>
+                        <li class="nav-item"><a class="nav-link" href="informasi.html">Informasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <img src="https://images.unsplash.com/photo-1601058497548-f247dfe349d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pemandangan Sumatera Utara">
+            <div class="header-caption">
+                <h1>Jelajahi Keindahan Sumatera Utara</h1>
+                <p>Dari danau vulkanik hingga hutan tropis yang lebat</p>
+            </div>
+        </section>
+
+        <!-- Region Selector Placeholder -->
+        <section class="region-selector container py-4 text-center">
+            <h2>Pilih Wilayah</h2>
+            <div class="region-buttons">
+                <button class="btn btn-primary region-filter active" data-filter="all">Semua</button>
+                <button class="btn btn-primary region-filter" data-filter="highlands">Dataran Tinggi</button>
+                <button class="btn btn-primary region-filter" data-filter="coastal">Pesisir</button>
+                <button class="btn btn-primary region-filter" data-filter="islands">Kepulauan</button>
+            </div>
+        </section>
+
+        <!-- Destination Cards -->
+        <section class="destinations-section container py-5">
+             <div class="destination-grid explore-grid">
+                <div class="destination-card explore-card" data-region="highlands">
+                    <img src="https://images.unsplash.com/photo-1601058497548-f247dfe349d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Danau Toba">
+                    <div class="card-content">
+                        <h3>Danau Toba</h3>
+                        <p>Danau vulkanik terbesar di dunia dengan pemandangan spektakuler.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                 <div class="destination-card explore-card" data-region="islands">
+                    <img src="https://images.unsplash.com/photo-1710472662181-b3efbd67223e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pulau Samosir">
+                     <div class="card-content">
+                        <h3>Pulau Samosir</h3>
+                        <p>Pulau di tengah Danau Toba, kaya akan budaya Batak.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                 <div class="destination-card explore-card" data-region="highlands">
+                    <img src="https://www.goersapp.com/blog/wp-content/uploads/2024/06/Tempat-wisata-berastagi-viral-1.jpg" alt="Berastagi">
+                     <div class="card-content">
+                        <h3>Berastagi</h3>
+                        <p>Kota dataran tinggi sejuk dengan pemandangan Gunung Sinabung dan Sibayak.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                 <div class="destination-card explore-card" data-region="highlands">
+                    <img src="https://podiumindonesia.com/wp-content/uploads/2021/11/bukit-lawang.jpg" alt="Bukit Lawang">
+                     <div class="card-content">
+                        <h3>Bukit Lawang</h3>
+                        <p>Gerbang menuju Taman Nasional Gunung Leuser, rumah Orangutan.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                 <div class="destination-card explore-card" data-region="coastal">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuApXVYOxTVYDIw7BWLHQTuTQtPjYxtWrKkQ&s" alt="Medan">
+                     <div class="card-content">
+                        <h3>Medan</h3>
+                        <p>Ibu kota provinsi, pusat kuliner dan sejarah.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                 <div class="destination-card explore-card" data-region="islands">
+                    <img src="https://images.unsplash.com/photo-1705830707830-7ce2806baae9?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pulau Nias">
+                     <div class="card-content">
+                        <h3>Pulau Nias</h3>
+                        <p>Terkenal dengan budaya lompat batu dan ombak selancarnya.</p>
+                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                 <div class="destination-card explore-card" data-region="highlands">
+                    <img src="https://images.unsplash.com/photo-1626696445855-5f1f90db7ae8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Air Terjun Sipiso-piso">
+                     <div class="card-content">
+                        <h3>Air Terjun Sipiso-piso</h3>
+                        <p>Salah satu air terjun tertinggi di Indonesia dekat Danau Toba.</p>
+                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                 <div class="destination-card explore-card" data-region="coastal">
+                    <img src="https://blog.bookingtogo.com/wp-content/uploads/2022/12/Tangkahan-Eco-Park-Sumatera-Utara.jpg" alt="Tangkahan">
+                     <div class="card-content">
+                        <h3>Tangkahan</h3>
+                        <p>Surga tersembunyi dengan gajah-gajah jinak dan sungai jernih.</p>
+                         <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabbed Content for Regions -->
+        <section class="region-tabs bg-light py-5">
+            <div class="container">
+                <h2 class="text-center section-title">Jelajahi Berdasarkan Wilayah</h2>
+                <div class="tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="highlands">Dataran Tinggi</button>
+                        <button class="tab-button" data-tab="coastal">Pesisir</button>
+                        <button class="tab-button" data-tab="islands">Kepulauan</button>
+                    </div>
+                    <div class="tab-content active" id="highlands">
+                        <h3>Dataran Tinggi Karo & Toba</h3>
+                        <p>Wilayah ini didominasi oleh pegunungan vulkanik, danau kawah yang luas, dan udara sejuk. Temukan keindahan Danau Toba, kesuburan tanah Karo di Berastagi, dan air terjun yang megah seperti Sipiso-piso. Ideal untuk pecinta alam dan budaya.</p>
+                        <img src="https://images2.alphacoders.com/594/594015.jpg" alt="Dataran Tinggi" class="region-img">
+                    </div>
+                     <div class="tab-content" id="coastal">
+                        <h3>Pesisir Timur & Barat</h3>
+                        <p>Pesisir timur adalah rumah bagi kota Medan yang ramai, sementara pesisir barat menawarkan pantai yang lebih tenang dan akses ke hutan hujan seperti Tangkahan. Nikmati keragaman kuliner, sejarah kolonial, dan keindahan pantai.</p>
+                        <img src="https://images.pexels.com/photos/315998/pexels-photo-315998.jpeg?cs=srgb&dl=pexels-pixabay-315998.jpg&fm=jpg" alt="Pesisir" class="region-img">
+                    </div>
+                     <div class="tab-content" id="islands">
+                        <h3>Kepulauan Nias & Sekitarnya</h3>
+                        <p>Pulau Nias dan pulau-pulau kecil di sekitarnya menawarkan budaya megalitik yang unik, ombak kelas dunia untuk selancar, dan pantai berpasir putih. Jelajahi tradisi lompat batu yang terkenal dan keindahan bawah laut.</p>
+                         <img src="https://images.pexels.com/photos/1021073/pexels-photo-1021073.jpeg?cs=srgb&dl=pexels-asadphoto-1021073.jpg&fm=jpg" alt="Kepulauan" class="region-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Visit Timeline -->
+        <section class="visit-timeline container py-5">
+            <h2 class="text-center section-title">Rekomendasi Rute Perjalanan</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuApXVYOxTVYDIw7BWLHQTuTQtPjYxtWrKkQ&s" alt="Medan">
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Hari 1-2: Medan</h4>
+                        <p>Jelajahi Istana Maimun, Masjid Raya, dan nikmati kuliner khas Medan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-img">
+                         <img src="https://podiumindonesia.com/wp-content/uploads/2021/11/bukit-lawang.jpg" alt="Bukit Lawang">
+                    </div>
+                    <div class="timeline-content">
+                         <h4>Hari 3-4: Bukit Lawang</h4>
+                        <p>Trekking di Taman Nasional Gunung Leuser, lihat Orangutan.</p>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-img">
+                         <img src="https://www.goersapp.com/blog/wp-content/uploads/2024/06/Tempat-wisata-berastagi-viral-1.jpg" alt="Berastagi">
+                    </div>
+                    <div class="timeline-content">
+                         <h4>Hari 5: Berastagi</h4>
+                        <p>Kunjungi pasar buah, pemandian air panas, dan lihat Gunung Sibayak.</p>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-img">
+                         <img src="https://images.unsplash.com/photo-1601058497548-f247dfe349d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Danau Toba">
+                    </div>
+                    <div class="timeline-content">
+                         <h4>Hari 6-8: Danau Toba & Pulau Samosir</h4>
+                        <p>Nikmati keindahan danau, kunjungi desa adat Batak di Samosir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+         <div class="container footer-content">
+             <div class="footer-section about">
+                 <img src="images/logo-placeholder-white.png" alt="Logo Pesona Sumatera Utara Putih" class="footer-logo">
+                 <p>Pesona Sumatera Utara adalah panduan resmi Anda untuk menjelajahi keajaiban provinsi Sumatera Utara.</p>
+                 <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                 </div>
+            </div>
+            <div class="footer-section links">
+                <h5>Tautan Cepat</h5>
+                <ul>
+                    <li><a href="jelajahi.html">Jelajahi</a></li>
+                    <li><a href="budaya.html">Budaya</a></li>
+                    <li><a href="kuliner.html">Kuliner</a></li>
+                    <li><a href="acara.html">Acara</a></li>
+                    <li><a href="informasi.html">Informasi Praktis</a></li>
+                </ul>
+            </div>
+             <div class="footer-section contact">
+                 <h5>Kontak Kami</h5>
+                 <p><i class="fas fa-map-marker-alt"></i> Dinas Kebudayaan & Pariwisata Prov. Sumatera Utara</p>
+                 <p>Jl. Jenderal Sudirman No. 123, Medan</p>
+                 <p><i class="fas fa-phone"></i> +62 61 1234567</p>
+                 <p><i class="fas fa-envelope"></i> info@pesonasumut.go.id</p>
+             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Hak Cipta &copy; 2024 Pesona Sumatera Utara. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Kembali ke atas"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+    <script src="tabs.js"></script>
+    <script src="filter.js"></script>
+</body>
+</html> 

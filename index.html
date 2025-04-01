@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jelajahi keindahan, budaya, dan petualangan Sumatera Utara di Pesona Sumatera Utara.">
+    <meta name="keywords" content="website pariwisata Sumatera Utara, wisata Sumatera Utara, jelajahi Sumatera Utara">
+    <title>Beranda - Pesona Sumatera Utara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        /* Enhanced Styles for Better Layout */
+        :root {
+            --dark-blue: #0d1f2d;
+            --light-blue: #a3c6d9;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .hero-slider {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+        }
+        
+        .slide {
+            height: 90vh;
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+            z-index: 1;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            z-index: 2;
+            max-width: 600px;
+        }
+        
+        .slide-caption h2 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .slide-caption p {
+            font-size: 1.2rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Navigation dots */
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .slider-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .slider-dots .dot.active {
+            background: #fff;
+            transform: scale(1.2);
+        }
+        
+        /* Destination Section */
+        .welcome-section {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        
+        .welcome-section p.lead {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .featured-destinations {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+        
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .destination-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+            height: 350px;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .destination-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+        
+        .destination-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        
+        .card-overlay h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .btn-accent {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        
+        .map-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Events Section */
+        .upcoming-events {
+            padding: 100px 0;
+            background-color: var(--dark-blue);
+            color: #fff;
+        }
+        
+        .upcoming-events .section-title {
+            color: #fff;
+        }
+        
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .event-item {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .event-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .event-img-container {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .event-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .event-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+        
+        .event-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .event-info {
+            padding: 25px;
+            color: #000;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .event-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .event-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .event-meta i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        .event-info .btn {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-icon {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-card h4 {
+            color: #333;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+        
+        .testimonial-card h4 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* Newsletter */
+        .newsletter-signup {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://torch.id/cdn/shop/articles/Artikel_170_-_Preview.jpg?v=1713641039');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .newsletter-signup h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-signup p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 25px;
+            border-radius: 50px 0 0 50px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: var(--dark-blue);
+            color: #fff;
+            padding-top: 70px;
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            margin-top: 70px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-slider, .slide {
+                height: 70vh;
+            }
+            
+            .slide-caption {
+                bottom: 10%;
+                left: 5%;
+            }
+            
+            .slide-caption h2 {
+                font-size: 2.5rem;
+            }
+            
+            .event-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .welcome-section, .featured-destinations, 
+            .map-section, .upcoming-events, 
+            .testimonials, .newsletter-signup {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo-placeholder.png" alt="Logo Pesona Sumatera Utara" class="logo"> Pesona Sumatera Utara
+                </a>
+                <button class="navbar-toggler" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jelajahi.html">Jelajahi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kuliner.html">Kuliner</a></li>
+                        <li class="nav-item"><a class="nav-link" href="petualangan.html">Petualangan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acara.html">Acara</a></li>
+                        <li class="nav-item"><a class="nav-link" href="informasi.html">Informasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Slider -->
+        <section class="hero-slider">
+            <div class="slider-container">
+                <div class="slide active">
+                    <img src="https://torch.id/cdn/shop/articles/Artikel_170_-_Preview.jpg?v=1713641039" alt="Danau Toba">
+                    <div class="slide-caption">
+                        <h2>Danau Toba</h2>
+                        <p>Keajaiban vulkanik terbesar di dunia.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2021/04/09/95290466-9a6e-42f8-9186-31dd8b2949df-1617964802521-0ace7592d464055307ca59f6270e3ab0.jpg" alt="Bukit Lawang">
+                    <div class="slide-caption">
+                        <h2>Bukit Lawang</h2>
+                        <p>Rumah bagi Orangutan Sumatera.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://kemenparekraf.go.id/_next/image?url=https%3A%2F%2Fapi2.kemenparekraf.go.id%2Fstorage%2Fapp%2Fuploads%2Fpublic%2F662%2F87a%2Fac6%2F66287aac6107a814688976.jpg&w=3840&q=75" alt="Pulau Samosir">
+                    <div class="slide-caption">
+                        <h2>Pulau Samosir</h2>
+                        <p>Pusat budaya Batak Toba.</p>
+                    </div>
+                </div>
+                 <div class="slide">
+                    <img src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2021/11/wisata-Berastagi.jpg" alt="Berastagi">
+                    <div class="slide-caption">
+                        <h2>Berastagi</h2>
+                        <p>Dataran tinggi yang sejuk dengan pemandangan gunung.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </section>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <p class="section-subtitle">Selamat Datang di</p>
+                <h1 class="section-title">Pesona Sumatera Utara</h1>
+                <p class="lead">Temukan keindahan alam yang memukau, warisan budaya yang kaya, dan petualangan tak terlupakan di jantung Pulau Sumatera. Sumatera Utara menawarkan pengalaman unik bagi setiap wisatawan.</p>
+                <div class="d-flex justify-content-center mt-4">
+                    <a href="jelajahi.html" class="btn btn-primary mx-2">Mulai Jelajahi</a>
+                    <a href="kontak.html" class="btn btn-outline-primary mx-2">Hubungi Kami</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <p class="section-subtitle">Temukan</p>
+                <h2 class="section-title">Destinasi Top Sumatera Utara</h2>
+                <div class="map-container">
+                    <img src="images/map-placeholder.png" alt="Peta Sumatera Utara" style="width:100%; height:auto;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Destinations -->
+        <section class="featured-destinations">
+            <div class="container">
+                <p class="section-subtitle">Jelajahi</p>
+                <h2 class="section-title">Destinasi Unggulan</h2>
+                <div class="destination-grid">
+                    <div class="destination-card">
+                        <img src="https://torch.id/cdn/shop/articles/Artikel_170_-_Preview.jpg?v=1713641039" alt="Danau Toba">
+                        <div class="card-overlay">
+                            <h3>Danau Toba</h3>
+                            <a href="jelajahi.html#danau-toba" class="btn btn-accent">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://kemenparekraf.go.id/_next/image?url=https%3A%2F%2Fapi2.kemenparekraf.go.id%2Fstorage%2Fapp%2Fuploads%2Fpublic%2F662%2F87a%2Fac6%2F66287aac6107a814688976.jpg&w=3840&q=75" alt="Pulau Samosir">
+                         <div class="card-overlay">
+                            <h3>Pulau Samosir</h3>
+                            <a href="jelajahi.html#pulau-samosir" class="btn btn-accent">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2021/11/wisata-Berastagi.jpg" alt="Berastagi">
+                         <div class="card-overlay">
+                            <h3>Berastagi</h3>
+                            <a href="jelajahi.html#berastagi" class="btn btn-accent">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2021/04/09/95290466-9a6e-42f8-9186-31dd8b2949df-1617964802521-0ace7592d464055307ca59f6270e3ab0.jpg" alt="Bukit Lawang">
+                         <div class="card-overlay">
+                            <h3>Bukit Lawang</h3>
+                            <a href="jelajahi.html#bukit-lawang" class="btn btn-accent">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://assets-a1.kompasiana.com/items/album/2023/08/02/landmark-kota-medan-64ca28b508a8b573cf6f1282.jpg" alt="Medan">
+                         <div class="card-overlay">
+                            <h3>Medan</h3>
+                             <a href="jelajahi.html#medan" class="btn btn-accent">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2019/07/wisata-nias-11-GoNias.jpg" alt="Pulau Nias">
+                         <div class="card-overlay">
+                            <h3>Pulau Nias</h3>
+                            <a href="jelajahi.html#nias" class="btn btn-accent">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="jelajahi.html" class="btn btn-primary">Lihat Semua Destinasi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section class="upcoming-events">
+            <div class="container">
+                <p class="section-subtitle">Event</p>
+                <h2 class="section-title">Acara Spesial Mendatang</h2>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event-img-container">
+                            <span class="event-category">Festival</span>
+                            <img src="https://asset.kompas.com/crops/pa9N9B3OVljpAouY_D58v3k0STM=/0x113:1000x613/1200x800/data/photo/2018/12/07/1192699459.jpeg" alt="Festival Danau Toba">
+                        </div>
+                        <div class="event-info">
+                            <h3>Festival Danau Toba</h3>
+                            <div class="event-meta">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>15-18 Agustus 2024</span>
+                            </div>
+                            <div class="event-meta">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Parapat, Danau Toba</span>
+                            </div>
+                            <p class="mt-3">Jangan lewatkan perayaan budaya terbesar di kawasan Danau Toba!</p>
+                            <a href="acara.html#festival-danau-toba" class="btn btn-accent mt-3">Info Selengkapnya</a>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-img-container">
+                            <span class="event-category">Budaya</span>
+                            <img src="https://kabarnias.com/wp-content/uploads/2018/10/007.jpg" alt="Ya'ahowu Nias Festival">
+                        </div>
+                        <div class="event-info">
+                            <h3>Ya'ahowu Nias Festival</h3>
+                            <div class="event-meta">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>10-14 September 2024</span>
+                            </div>
+                            <div class="event-meta">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Teluk Dalam, Nias Selatan</span>
+                            </div>
+                            <p class="mt-3">Saksikan atraksi lompat batu yang mendebarkan, tarian perang, dan kekayaan budaya Nias.</p>
+                            <a href="acara.html#yahowu-nias" class="btn btn-accent mt-3">Info Selengkapnya</a>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-img-container">
+                            <span class="event-category">Kuliner</span>
+                            <img src="https://t-2.tstatic.net/medan/foto/bank/images/Suasana-stand-Kuliner.jpg" alt="Medan Food Festival">
+                        </div>
+                        <div class="event-info">
+                            <h3>Medan Food Festival</h3>
+                            <div class="event-meta">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>5-7 Oktober 2024</span>
+                            </div>
+                            <div class="event-meta">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Lapangan Merdeka, Medan</span>
+                            </div>
+                            <p class="mt-3">Pesta kuliner terbesar di Medan, menyajikan beragam hidangan khas Sumatera Utara.</p>
+                            <a href="acara.html#medan-foodfest" class="btn btn-accent mt-3">Info Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="acara.html" class="btn btn-light">Lihat Semua Acara</a>
+                </div>
+            </div>
+        </section>
+
+         <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <p class="section-subtitle">Pengalaman</p>
+                <h2 class="section-title">Apa Kata Mereka?</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon"><i class="fas fa-quote-left fa-2x"></i></div>
+                        <p>"Pengalaman luar biasa di Danau Toba! Pemandangannya menakjubkan dan budayanya sangat kaya."</p>
+                        <h4><i class="fas fa-user-circle"></i> Maria S. - Jakarta</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon"><i class="fas fa-quote-left fa-2x"></i></div>
+                        <p>"Melihat orangutan di Bukit Lawang adalah highlight perjalanan saya. Sangat direkomendasikan!"</p>
+                        <h4><i class="fas fa-user-circle"></i> Ben K. - Australia</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon"><i class="fas fa-quote-left fa-2x"></i></div>
+                        <p>"Kuliner Medan benar-benar juara! Saya tidak bisa berhenti makan Soto Medan dan Bika Ambon."</p>
+                        <h4><i class="fas fa-user-circle"></i> Aisha R. - Malaysia</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon"><i class="fas fa-quote-left fa-2x"></i></div>
+                        <p>"Lompat batu di Nias sangat mengagumkan! Budaya yang unik dan masyarakat yang ramah."</p>
+                        <h4><i class="fas fa-user-circle"></i> Kenji T. - Jepang</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-signup">
+            <div class="container text-center">
+                <h2>Dapatkan Info Terbaru dari Sumatera Utara</h2>
+                <p>Berlangganan newsletter kami untuk tips perjalanan, acara khusus, dan penawaran eksklusif.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Masukkan alamat email Anda" required>
+                    <button type="submit" class="btn-accent">Berlangganan</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+         <div class="container footer-content">
+             <div class="footer-section about">
+                 <img src="images/logo-placeholder-white.png" alt="Logo Pesona Sumatera Utara Putih" class="footer-logo">
+                 <p>Pesona Sumatera Utara adalah panduan resmi Anda untuk menjelajahi keajaiban provinsi Sumatera Utara.</p>
+                 <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                 </div>
+            </div>
+            <div class="footer-section links">
+                <h5>Tautan Cepat</h5>
+                <ul>
+                    <li><a href="jelajahi.html">Jelajahi</a></li>
+                    <li><a href="budaya.html">Budaya</a></li>
+                    <li><a href="kuliner.html">Kuliner</a></li>
+                    <li><a href="acara.html">Acara</a></li>
+                    <li><a href="informasi.html">Informasi Praktis</a></li>
+                </ul>
+            </div>
+             <div class="footer-section contact">
+                 <h5>Kontak Kami</h5>
+                 <p><i class="fas fa-map-marker-alt"></i> Dinas Kebudayaan & Pariwisata Prov. Sumatera Utara</p>
+                 <p>Jl. Jenderal Sudirman No. 123, Medan</p>
+                 <p><i class="fas fa-phone"></i> +62 61 1234567</p>
+                 <p><i class="fas fa-envelope"></i> info@pesonasumut.go.id</p>
+             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Hak Cipta &copy; 2024 Pesona Sumatera Utara. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Kembali ke atas"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+    <script src="slider.js"></script>
+    <script>
+        // Add JavaScript for slider dots functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dots = document.querySelectorAll('.slider-dots .dot');
+            const slides = document.querySelectorAll('.slide');
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    // Remove active class from all dots and slides
+                    dots.forEach(d => d.classList.remove('active'));
+                    slides.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to current dot and slide
+                    dot.classList.add('active');
+                    slides[index].classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

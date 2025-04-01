@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Kuliner - Pesona Sumatera Utara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="kuliner.css">
+    <link rel="stylesheet" href="lightbox.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo-placeholder.png" alt="Logo Pesona Sumatera Utara" class="logo"> Pesona Sumatera Utara
+                </a>
+                <button class="navbar-toggler" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jelajahi.html">Jelajahi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="kuliner.html">Kuliner</a></li>
+                        <li class="nav-item"><a class="nav-link" href="petualangan.html">Petualangan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acara.html">Acara</a></li>
+                        <li class="nav-item"><a class="nav-link" href="informasi.html">Informasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <img src="https://media.istockphoto.com/id/1019441380/photo/many-different-indonesian-food-dishes-various-indonesian-bali-food.jpg?s=612x612&w=0&k=20&c=6K2JlIUT2mKD23_Qy8kB4bX7x5GYBA-BFNNOkeZuZ1g=" alt="Kuliner Sumatera Utara">
+            <div class="header-caption">
+                <h1>Jelajahi Rasa Sumatera Utara</h1>
+                <p>Perpaduan cita rasa Melayu, Batak, India, dan Tionghoa</p>
+            </div>
+        </section>
+
+        <!-- Food Gallery -->
+        <section class="food-gallery container py-5">
+            <h2 class="text-center section-title">Galeri Kelezatan</h2>
+             <div class="gallery-grid culinary-gallery">
+                <a href="https://awsimages.detik.net.id/community/media/visual/2020/12/04/5-tempat-makan-soto-medan-enak-di-jakarta-udang-dan-ayamnya-mantap_169.png?w=1200" data-lightbox="kuliner" data-title="Soto Medan">
+                    <img src="https://awsimages.detik.net.id/community/media/visual/2020/12/04/5-tempat-makan-soto-medan-enak-di-jakarta-udang-dan-ayamnya-mantap_169.png?w=1200" alt="Soto Medan">
+                </a>
+                <a href="https://asset.kompas.com/crops/enUddNIpPQYubr6aiWFu062sts0=/0x0:1000x667/1200x800/data/photo/2023/09/15/6503f5d0c90c0.jpg" data-lightbox="kuliner" data-title="Bika Ambon">
+                    <img src="https://asset.kompas.com/crops/enUddNIpPQYubr6aiWFu062sts0=/0x0:1000x667/1200x800/data/photo/2023/09/15/6503f5d0c90c0.jpg" alt="Bika Ambon">
+                </a>
+                <a href="https://www.sasa.co.id/medias/page_medias/resep_arsik_ikan_mas.jpg" data-lightbox="kuliner" data-title="Ikan Mas Arsik">
+                    <img src="https://www.sasa.co.id/medias/page_medias/resep_arsik_ikan_mas.jpg" alt="Ikan Mas Arsik">
+                </a>
+                <a href="https://awsimages.detik.net.id/community/media/visual/2021/02/02/lontong-sayur-medan_43.jpeg?w=600&q=90" data-lightbox="kuliner" data-title="Lontong Medan">
+                    <img src="https://awsimages.detik.net.id/community/media/visual/2021/02/02/lontong-sayur-medan_43.jpeg?w=600&q=90" alt="Lontong Medan">
+                </a>
+                <a href="https://i0.wp.com/poultryindonesia.com/wp-content/uploads/2019/01/sajiansedap.grid_.id_.jpg?fit=709%2C471&ssl=1" data-lightbox="kuliner" data-title="Bihun Bebek">
+                    <img src="https://i0.wp.com/poultryindonesia.com/wp-content/uploads/2019/01/sajiansedap.grid_.id_.jpg?fit=709%2C471&ssl=1" alt="Bihun Bebek">
+                </a>
+                <a href="https://cdn0-production-images-kly.akamaized.net/ozkUByCnCaLWUsoHu4mGrMIPNFM=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4941104/original/056258600_1725956251-Mie_Balap.jpg" data-lightbox="kuliner" data-title="Mie Balap">
+                    <img src="https://cdn0-production-images-kly.akamaized.net/ozkUByCnCaLWUsoHu4mGrMIPNFM=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4941104/original/056258600_1725956251-Mie_Balap.jpg" alt="Mie Balap">
+                </a>
+                <a href="https://akcdn.detik.net.id/visual/2024/01/30/tempoyak_169.jpeg?w=1200" data-lightbox="kuliner" data-title="Durian & Tempoyak">
+                    <img src="https://akcdn.detik.net.id/visual/2024/01/30/tempoyak_169.jpeg?w=1200" alt="Durian & Tempoyak">
+                </a>
+                 <a href="https://asset.kompas.com/crops/Z6iWFsVK6RWPukx57_M38cw-dmQ=/0x0:968x645/1200x800/data/photo/2023/10/21/6533ac0ae0848.jpg" data-lightbox="kuliner" data-title="Ombus-ombus">
+                    <img src="https://asset.kompas.com/crops/Z6iWFsVK6RWPukx57_M38cw-dmQ=/0x0:968x645/1200x800/data/photo/2023/10/21/6533ac0ae0848.jpg" alt="Ombus-ombus">
+                </a>
+            </div>
+             <p class="text-center mt-3">Klik gambar untuk melihat lebih besar.</p>
+        </section>
+
+        <!-- Categorized Culinary Sections -->
+        <section class="culinary-categories bg-light py-5">
+            <div class="container">
+                <h2 class="text-center section-title">Kategori Kuliner</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://cdn0-production-images-kly.akamaized.net/NJoWXgmI3KgSloyhRsI_f0Gtq7I=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4801761/original/002332400_1713164839-shutterstock_2071593902.jpg" alt="Makanan Berat">
+                        <h4>Makanan Berat</h4>
+                        <p>Soto Medan, Ikan Mas Arsik, Naniura, Saksang.</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Jajan_Pasar_in_Jakarta.JPG" alt="Jajanan & Kue">
+                        <h4>Jajanan & Kue</h4>
+                        <p>Bika Ambon, Ombus-ombus, Lappet, Kue Cubit.</p>
+                    </div>
+                     <div class="category-card">
+                        <img src="https://www.kemenparekraf.go.id/_next/image?url=https%3A%2F%2Fapi2.kemenparekraf.go.id%2Fstorage%2Fapp%2Fuploads%2Fpublic%2F645%2F9b7%2Ff4c%2F6459b7f4c5a9d173660361.jpg&w=3840&q=75" alt="Minuman Khas">
+                        <h4>Minuman Khas</h4>
+                        <p>Teh Susu Telur (TST), Kopi Sidikalang, Tuak.</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://cdn1-production-images-kly.akamaized.net/PPXPF0kBl1yG3RLg1Mi_4j2gFQQ=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3092440/original/080549700_1585833670-pasta-dish-on-white-ceramic-bowl-3778857.jpg" alt="Olahan Mie">
+                         <h4>Olahan Mie</h4>
+                        <p>Mie Gomak, Mie Balap, Bihun Bebek Asie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Culinary Map Placeholder -->
+        <section class="culinary-map py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center section-title">Peta Kuliner Interaktif</h2>
+                <p class="text-center mb-4">Jelajahi lokasi makanan khas Sumatera Utara di berbagai kota</p>
+                <div id="culinary-map" style="height: 500px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></div>
+                <div class="map-legend mt-3">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <div class="legend-item mx-3 mb-2">
+                            <span class="legend-icon" style="background-color: #e74c3c;"></span>
+                            <span class="legend-text">Restoran Tradisional</span>
+                        </div>
+                        <div class="legend-item mx-3 mb-2">
+                            <span class="legend-icon" style="background-color: #3498db;"></span>
+                            <span class="legend-text">Pusat Jajanan</span>
+                        </div>
+                        <div class="legend-item mx-3 mb-2">
+                            <span class="legend-icon" style="background-color: #2ecc71;"></span>
+                            <span class="legend-text">Pasar Tradisional</span>
+                        </div>
+                        <div class="legend-item mx-3 mb-2">
+                            <span class="legend-icon" style="background-color: #f39c12;"></span>
+                            <span class="legend-text">Kedai Durian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipe Cards -->
+        <section class="recipe-cards py-5">
+            <div class="container">
+                <h2 class="text-center section-title">Resep Pilihan</h2>
+                <p class="text-center mb-5">Coba buat sendiri kuliner khas Sumatera Utara di rumah</p>
+                
+                <div class="simple-tabs">
+                    <!-- Tab navigation -->
+                    <div class="tab-nav text-center mb-4">
+                        <button class="tab-btn active" onclick="openRecipe('soto')">Soto Medan</button>
+                        <button class="tab-btn" onclick="openRecipe('arsik')">Ikan Mas Arsik</button>
+                        <button class="tab-btn" onclick="openRecipe('bika')">Bika Ambon</button>
+                    </div>
+                    
+                    <!-- Tab content -->
+                    <div id="soto" class="tab-content active">
+                        <div class="recipe-card">
+                            <div class="recipe-header">
+                                <img src="https://awsimages.detik.net.id/community/media/visual/2020/12/04/5-tempat-makan-soto-medan-enak-di-jakarta-udang-dan-ayamnya-mantap_169.png?w=1200" alt="Soto Medan">
+                                <div class="recipe-overlay">
+                                    <h3>Soto Medan</h3>
+                                    <div class="recipe-meta">
+                                        <span><i class="fas fa-clock"></i> 60 menit</span>
+                                        <span><i class="fas fa-fire"></i> Medium</span>
+                                        <span><i class="fas fa-utensils"></i> 4 porsi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recipe-body p-4">
+                                <h4 class="mb-3">Bahan-bahan:</h4>
+                                <ul class="mb-4">
+                                    <li>1 ekor ayam kampung</li>
+                                    <li>200 ml santan kental</li>
+                                    <li>1 liter santan encer</li>
+                                    <li>2 batang serai, memarkan</li>
+                                    <li>3 lembar daun jeruk</li>
+                                    <li>Garam dan gula secukupnya</li>
+                                </ul>
+                                
+                                <h4 class="mb-3">Cara Membuat:</h4>
+                                <ol>
+                                    <li>Rebus ayam hingga empuk, suwir-suwir.</li>
+                                    <li>Tumis bumbu halus dengan rempah hingga harum.</li>
+                                    <li>Masukkan tumisan bumbu ke kaldu, tambahkan santan.</li>
+                                    <li>Masak hingga mendidih dan bumbu meresap.</li>
+                                    <li>Sajikan dengan pelengkap.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="arsik" class="tab-content">
+                        <div class="recipe-card">
+                            <div class="recipe-header">
+                                <img src="https://www.sasa.co.id/medias/page_medias/resep_arsik_ikan_mas.jpg" alt="Ikan Mas Arsik">
+                                <div class="recipe-overlay">
+                                    <h3>Ikan Mas Arsik</h3>
+                                    <div class="recipe-meta">
+                                        <span><i class="fas fa-clock"></i> 90 menit</span>
+                                        <span><i class="fas fa-fire"></i> Medium</span>
+                                        <span><i class="fas fa-utensils"></i> 4 porsi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recipe-body p-4">
+                                <h4 class="mb-3">Bahan-bahan:</h4>
+                                <ul class="mb-4">
+                                    <li>1 ekor ikan mas</li>
+                                    <li>Andaliman</li>
+                                    <li>Asam cikala</li>
+                                    <li>Bunga kecombrang</li>
+                                    <li>Bumbu halus (bawang, cabai, kunyit, kemiri)</li>
+                                </ul>
+                                
+                                <h4 class="mb-3">Cara Membuat:</h4>
+                                <ol>
+                                    <li>Bersihkan ikan mas, lumuri bumbu halus.</li>
+                                    <li>Susun rempah dan sayuran di dasar wajan.</li>
+                                    <li>Letakkan ikan di atasnya.</li>
+                                    <li>Masak dengan api kecil hingga bumbu meresap.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="bika" class="tab-content">
+                        <div class="recipe-card">
+                            <div class="recipe-header">
+                                <img src="https://asset.kompas.com/crops/enUddNIpPQYubr6aiWFu062sts0=/0x0:1000x667/1200x800/data/photo/2023/09/15/6503f5d0c90c0.jpg" alt="Bika Ambon">
+                                <div class="recipe-overlay">
+                                    <h3>Bika Ambon</h3>
+                                    <div class="recipe-meta">
+                                        <span><i class="fas fa-clock"></i> 120 menit</span>
+                                        <span><i class="fas fa-fire"></i> Hard</span>
+                                        <span><i class="fas fa-utensils"></i> 8 porsi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recipe-body p-4">
+                                <h4 class="mb-3">Bahan-bahan:</h4>
+                                <ul class="mb-4">
+                                    <li>250 gram tepung tapioka</li>
+                                    <li>100 gram tepung terigu</li>
+                                    <li>200 gram gula pasir</li>
+                                    <li>400 ml santan kental</li>
+                                    <li>6 butir telur</li>
+                                    <li>1 sendok teh ragi instan</li>
+                                    <li>5 lembar daun jeruk, iris halus</li>
+                                    <li>2 batang serai, ambil bagian putihnya, memarkan</li>
+                                </ul>
+                                
+                                <h4 class="mb-3">Cara Membuat:</h4>
+                                <ol>
+                                    <li>Campurkan tepung terigu dengan ragi, diamkan.</li>
+                                    <li>Rebus santan dengan gula, daun jeruk dan serai.</li>
+                                    <li>Kocok telur, campurkan bahan lain secara bertahap.</li>
+                                    <li>Fermentasi adonan minimal 4 jam.</li>
+                                    <li>Panggang dengan api bawah hingga muncul sarang.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Markets -->
+        <section class="local-markets container py-5">
+            <h2 class="text-center section-title">Pasar Tradisional & Pusat Oleh-Oleh</h2>
+            <div class="market-list">
+                <div class="market-item">
+                    <img src="https://bolumenara.co.id/uploads/8/2023-11/c738f3334a9d2ed99a2a4372571bad0d.jpg" alt="Pasar di Medan">
+                    <div>
+                        <h3>Pusat Pasar Medan</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Medan Kota</p>
+                        <p><i class="fas fa-clock"></i> Buka: 06:00 - 18:00</p>
+                        <p>Temukan berbagai bahan makanan segar, rempah, dan jajanan pasar.</p>
+                    </div>
+                </div>
+                 <div class="market-item">
+                    <img src="https://atourin.obs.ap-southeast-3.myhuaweicloud.com/images/destination/karo/pasar-buah-berastagi-profile1637511547.png?x-image-process=image/resize,p_100,limit_1/imageslim" alt="Pasar Buah Berastagi">
+                     <div>
+                        <h3>Pasar Buah Berastagi</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Berastagi, Karo</p>
+                        <p><i class="fas fa-clock"></i> Buka: 08:00 - 17:00</p>
+                        <p>Surga buah-buahan segar khas dataran tinggi seperti markisa, jeruk, dan stroberi.</p>
+                    </div>
+                </div>
+                 <div class="market-item">
+                    <img src="https://nagantour.com/wp-content/uploads/2024/03/pusat-oleh-oleh-surabaya.webp" alt="Pusat Oleh-Oleh Medan">
+                     <div>
+                        <h3>Jalan Mojopahit (Oleh-Oleh)</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Medan Petisah</p>
+                        <p><i class="fas fa-clock"></i> Buka: 09:00 - 21:00</p>
+                        <p>Pusat membeli oleh-oleh khas Medan seperti Bika Ambon, Bolu Meranti, dan sirup markisa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Featured Specialty -->
+        <section class="featured-specialty bg-light py-5">
+            <div class="container text-center">
+                 <h2 class="section-title">Wajib Coba: Durian Medan</h2>
+                <img src="https://ceritamedan.com/wp-content/uploads/2021/08/Berbagai-Macam-Olahan-Kuliner-dari-Durian-Medan.jpg" alt="Durian Medan" class="featured-img">
+                <p class="lead mt-3">Sumatera Utara, khususnya Medan, terkenal sebagai surganya durian. Nikmati berbagai jenis durian lokal dengan rasa dan aroma yang khas di kedai-kedai durian legendaris seperti Ucok Durian.</p>
+                <a href="#" class="btn btn-primary">Temukan Lokasi Durian Terbaik</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+         <div class="container footer-content">
+             <div class="footer-section about">
+                 <img src="images/logo-placeholder-white.png" alt="Logo Pesona Sumatera Utara Putih" class="footer-logo">
+                 <p>Pesona Sumatera Utara adalah panduan resmi Anda untuk menjelajahi keajaiban provinsi Sumatera Utara.</p>
+                 <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                 </div>
+            </div>
+            <div class="footer-section links">
+                <h5>Tautan Cepat</h5>
+                <ul>
+                    <li><a href="jelajahi.html">Jelajahi</a></li>
+                    <li><a href="budaya.html">Budaya</a></li>
+                    <li><a href="kuliner.html">Kuliner</a></li>
+                    <li><a href="acara.html">Acara</a></li>
+                    <li><a href="informasi.html">Informasi Praktis</a></li>
+                </ul>
+            </div>
+             <div class="footer-section contact">
+                 <h5>Kontak Kami</h5>
+                 <p><i class="fas fa-map-marker-alt"></i> Dinas Kebudayaan & Pariwisata Prov. Sumatera Utara</p>
+                 <p>Jl. Jenderal Sudirman No. 123, Medan</p>
+                 <p><i class="fas fa-phone"></i> +62 61 1234567</p>
+                 <p><i class="fas fa-envelope"></i> info@pesonasumut.go.id</p>
+             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Hak Cipta &copy; 2024 Pesona Sumatera Utara. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Kembali ke atas"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="lightbox.min.js"></script>
+    <script src="script.js"></script>
+    <script src="accordion.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'disableScrolling': true
+        })
+    </script>
+    <script>
+    // Simple tab function
+    function openRecipe(recipeId) {
+        // Hide all tabs
+        var tabContents = document.getElementsByClassName('tab-content');
+        for (var i = 0; i < tabContents.length; i++) {
+            tabContents[i].classList.remove('active');
+        }
+        
+        // Remove active class from all buttons
+        var tabButtons = document.getElementsByClassName('tab-btn');
+        for (var i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove('active');
+        }
+        
+        // Show the selected tab
+        document.getElementById(recipeId).classList.add('active');
+        
+        // Find and activate the corresponding button
+        var buttons = document.getElementsByClassName('tab-btn');
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].getAttribute('onclick').includes(recipeId)) {
+                buttons[i].classList.add('active');
+            }
+        }
+    }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,32 @@
+/* Map Styles */
+#history-map {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.map-info {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+.map-info i {
+    color: #5c6bc0;
+}
+
+.legend {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 0.85rem;
+}
+
+.search-control input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-control input:focus {
+    outline: 2px solid #5c6bc0;
+} 
